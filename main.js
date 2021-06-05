@@ -6,7 +6,7 @@ var createWindow = () => {
     height: 1440
   });
 
-  mainWindow.loadFile('index.html');
+  mainWindow.loadURL('http://localhost:3004/');
 };
 
 app.whenReady().then(createWindow);
