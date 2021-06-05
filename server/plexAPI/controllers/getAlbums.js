@@ -2,7 +2,7 @@ const plexConfig = require('../plexConfig');
 const axios = require('axios');
 
 const getAlbums = (req, res) => {
-  const url = `${plexConfig.baseURL}:${plexConfig.port}/library/sections/9/all`;
+  const url = `${plexConfig.baseURL}:${plexConfig.port}/library/sections/8/all`;
   const params = {
     'X-Plex-Token': plexConfig.plexToken
   };
