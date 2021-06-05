@@ -1,3 +1,5 @@
-baseURL = '';
-port = '';
-plexToken = '';
+module.exports = config = {
+  baseURL: '',
+  port: '',
+  plexToken: ''
+};
