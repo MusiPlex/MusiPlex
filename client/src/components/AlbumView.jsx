@@ -1,4 +1,5 @@
 import React from 'react';
+import generalStyles from '../styles/GeneralStyles.js';
 
 class AlbumView extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class AlbumView extends React.Component {
 
   render () {
     return (
-      <div>
+      <generalStyles.SixColumnLayout>
         {this.state.albumData.map((album) => {
           return (
             <div>
@@ -24,7 +25,7 @@ class AlbumView extends React.Component {
             </div>
           );
         })}
-      </div>
+      </generalStyles.SixColumnLayout>
 
     );
   }
