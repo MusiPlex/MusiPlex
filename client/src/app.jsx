@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import AlbumView from './components/AlbumView.jsx';
 
 const App = () => {
   return (
-    <div>Hello World!</div>
+    <AlbumView />
   );
 };
 
