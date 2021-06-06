@@ -6,7 +6,6 @@ const getAlbums = (req, res) => {
   const params = {
     'X-Plex-Token': plexConfig.plexToken
   };
-
   axios.get(url, { params })
     .then ((response) => {
       res.send(response.data);
