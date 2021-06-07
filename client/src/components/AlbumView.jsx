@@ -20,10 +20,12 @@ class AlbumView extends React.Component {
       <generalStyles.SixColumnLayout>
         {this.state.albumData.map((album) => {
           return (
-            <div>
-              {album.title}
-              <img src={`/thumbnails?url=${album.thumb}`}></img>
-            </div>
+            <generalStyles.AlbumView>
+              <img src={`/thumbnails?url=${album.thumb}`} width="180" height="180"></img>
+              <generalStyles.AlbumTitle>
+                {album.title}
+              </generalStyles.AlbumTitle>
+            </generalStyles.AlbumView>
           );
         })}
       </generalStyles.SixColumnLayout>
