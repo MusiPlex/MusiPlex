@@ -3,3 +3,4 @@ package-lock.json
 /client/dist/bundle.js
 /server/plexAPI/plexConfig.js
 .DS_Store
+/assets
