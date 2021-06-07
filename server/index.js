@@ -5,8 +5,12 @@ const path = require('path');
 const plexControllers = require('./plexAPI/plexControllers');
 
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get('/albums', plexControllers.getAlbums);
+
+app.get('/thumbnails', plexControllers.getThumbnails);
 
 app.listen(port, () => {
   console.log(`MusiPlex listening at http://localhost:${port}`);

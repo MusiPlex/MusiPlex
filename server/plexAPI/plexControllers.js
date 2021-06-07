@@ -1,7 +1,9 @@
 const getAlbums = require('./controllers/getAlbums');
+const getThumbnails = require('./controllers/getThumbnails');
 
 const plexControllers = {
-  getAlbums
+  getAlbums,
+  getThumbnails
 };
 
 module.exports = plexControllers;

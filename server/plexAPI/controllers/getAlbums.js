@@ -6,7 +6,9 @@ const getAlbums = (req, res) => {
   const params = {
     'sort': 'titleSort',
     'type': 9,
-    'X-Plex-Token': plexConfig.plexToken
+    'X-Plex-Token': plexConfig.plexToken,
+    'X-Plex-Container-Start': 0,
+    'X-Plex-Container-Size': 24
   };
   axios.get(url, { params })
     .then ((response) => {
