@@ -1,7 +1,7 @@
 import React from 'react';
 import generalStyles from '../styles/GeneralStyles.js';
 
-class AlbumView extends React.Component {
+class AlbumsView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,4 +41,4 @@ class AlbumView extends React.Component {
   }
 }
 
-export default AlbumView;
+export default AlbumsView;
