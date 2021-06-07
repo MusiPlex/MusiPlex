@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import AlbumStyles from '../styles/AlbumStyles.js';
 
 class AlbumView extends React.Component {
   constructor(props) {
@@ -8,6 +8,7 @@ class AlbumView extends React.Component {
       albumData: [],
       loading: true,
     };
+    console.log(props);
   }
 
   componentDidMount() {
@@ -20,15 +21,14 @@ class AlbumView extends React.Component {
     return (
       <div>
         { this.state.loading ?
-          <div></div> :
-          <div>
-            <div style={{ backgroundImage: `url(/thumbnails?url=${this.state.albumData.thumb}), height: '500px', width: '1000px'`}}>
-            <img src={`/thumbnails?url=${this.state.albumData.thumb}`} width="180" height="180"></img>
-            <h1>
-              {this.state.albumData.title2}
-            </h1>
-            </div>
-          </div>
+          <AlbumStyles.Container background={`/thumbnails?url=${this.props.albumThumb}`} /> :
+          <AlbumStyles.Container>
+            <AlbumStyles.Background background={`/thumbnails?url=${this.state.albumData.thumb}`}/>
+              <img src={`/thumbnails?url=${this.state.albumData.thumb}`} width="180" height="180"></img>
+              <h1>
+                {this.state.albumData.title2}
+              </h1>
+          </AlbumStyles.Container>
         }
       </div>
     );
