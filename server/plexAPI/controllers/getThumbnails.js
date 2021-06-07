@@ -2,6 +2,7 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const plexConfig = require('../plexConfig');
+const placeholder = path.join(__dirname, '..', '..', '..', 'static', 'placeholder.jpg')
 
 const getThumbnails = async (req, res) => {
   let outName = `${req.query.url.split('/').slice(-1)}.jpg`
@@ -30,7 +31,7 @@ const getThumbnails = async (req, res) => {
         res.sendFile(outPath);
       });
     } catch (err) {
-      throw new Error(err);
+      res.sendFile(placeholder);
     }
   }
 };
