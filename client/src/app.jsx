@@ -1,9 +1,12 @@
 import React from 'react';
 import AlbumView from './components/AlbumView.jsx';
+import globalStyles from './styles/GlobalStyles.js';
 
 const App = () => {
   return (
-    <AlbumView />
+    <globalStyles.body>
+      <AlbumView />
+    </globalStyles.body>
   );
 };
 
