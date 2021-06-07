@@ -4,7 +4,7 @@ const path = require('path');
 const plexConfig = require('../plexConfig');
 
 const getThumbnails = async (req, res) => {
-  let outName =` ${req.query.url.split('/').slice(-1)}.jpg`
+  let outName = `${req.query.url.split('/').slice(-1)}.jpg`
   let outPath = path.join(__dirname, '..', '..', '..', 'assets', outName)
   if (fs.existsSync(outPath)) {
     res.sendFile(outPath);
