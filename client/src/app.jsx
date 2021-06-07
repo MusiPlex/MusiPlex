@@ -11,8 +11,8 @@ class App extends React.Component {
     };
   }
 
-  handleAlbum (albumId) {
-    this.setState({currentAlbum: albumId, currentView: 'album'});
+  handleAlbum (albumId, albumThumb) {
+    this.setState({currentAlbum: albumId, albumThumb: albumThumb, currentView: 'album'});
   }
 
   render () {
@@ -20,7 +20,7 @@ class App extends React.Component {
       <globalStyles.body>
         {this.state.currentView === 'albums' ?
           <AlbumsView handleAlbum={this.handleAlbum.bind(this)} /> :
-          <AlbumView currentAlbum={this.state.currentAlbum}/>
+          <AlbumView currentAlbum={this.state.currentAlbum} albumThumb={this.state.albumThumb}/>
         }
       </globalStyles.body>
     );

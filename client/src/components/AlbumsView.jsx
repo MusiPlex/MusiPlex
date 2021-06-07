@@ -20,7 +20,7 @@ class AlbumsView extends React.Component {
       <generalStyles.SixColumnLayout>
         {this.state.albumData.map((album) => {
           return (
-            <generalStyles.AlbumView onClick={() => this.props.handleAlbum(album.ratingKey)}>
+            <generalStyles.AlbumView onClick={() => this.props.handleAlbum(album.ratingKey, album.thumb)}>
               <generalStyles.AlbumThumbnailHolder>
                 <generalStyles.AlbumThumbnail>
                   <img src={`/thumbnails?url=${album.thumb}`} width="180" height="180"></img>
