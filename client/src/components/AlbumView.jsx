@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+
 import albumStyles from '../styles/AlbumStyles.js';
 import generalStyles from '../styles/GeneralStyles.js';
 
@@ -49,7 +51,7 @@ class AlbumView extends React.Component {
                       <div>{song.originalTitle}</div>
                     </albumStyles.SongInformation>
                     <albumStyles.SongDuration>
-                      {song.duration}
+                      {moment(song.duration).format('m:ss')}
                     </albumStyles.SongDuration>
                   </albumStyles.SongListing>
                 );
