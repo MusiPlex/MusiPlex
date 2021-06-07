@@ -1,5 +1,5 @@
 import React from 'react';
-import AlbumStyles from '../styles/AlbumStyles.js';
+import albumStyles from '../styles/AlbumStyles.js';
 import generalStyles from '../styles/GeneralStyles.js';
 
 class AlbumView extends React.Component {
@@ -21,9 +21,9 @@ class AlbumView extends React.Component {
     return (
       <div>
         { this.state.loading ?
-          <AlbumStyles.Container background={`/thumbnails?url=${this.props.albumThumb}`} /> :
-          <AlbumStyles.Container>
-            <AlbumStyles.Background background={`/thumbnails?url=${this.state.albumData.thumb}`}/>
+          <albumStyles.Container background={`/thumbnails?url=${this.props.albumThumb}`} /> :
+          <albumStyles.Container>
+            <albumStyles.Background background={`/thumbnails?url=${this.state.albumData.thumb}`}/>
             <generalStyles.PaddedHeading>
               <generalStyles.AlbumThumbnailHolder>
                 <generalStyles.AlbumThumbnail>
@@ -33,23 +33,29 @@ class AlbumView extends React.Component {
                   </generalStyles.AlbumThumbnailText>
                 </generalStyles.AlbumThumbnail>
               </generalStyles.AlbumThumbnailHolder>
-              <h1>
+              <albumStyles.AlbumTitle>
                 {this.state.albumData.title2}
-              </h1>
+              </albumStyles.AlbumTitle>
             </generalStyles.PaddedHeading>
-            <AlbumStyles.SongsListing>
+            <albumStyles.SongsListing>
               {this.state.albumData.Metadata.map((song) => {
                 return (
-                  <div>
-                    <div>{song.index}</div>
-                    <div>{song.title}</div>
-                    <div>{song.originalTitle}</div>
-                    <div>{song.duration}</div>
-                  </div>
+                  <albumStyles.SongListing>
+                    <albumStyles.SongIndex>
+                      {song.index}
+                    </albumStyles.SongIndex>
+                    <albumStyles.SongInformation>
+                      <div>{song.title}</div>
+                      <div>{song.originalTitle}</div>
+                    </albumStyles.SongInformation>
+                    <albumStyles.SongDuration>
+                      {song.duration}
+                    </albumStyles.SongDuration>
+                  </albumStyles.SongListing>
                 );
               })}
-            </AlbumStyles.SongsListing>
-          </AlbumStyles.Container>
+            </albumStyles.SongsListing>
+          </albumStyles.Container>
         }
       </div>
     );

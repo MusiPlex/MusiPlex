@@ -51,10 +51,11 @@ const AlbumThumbnail = styled.div`
   &:hover {
     filter: brightness(40%);
     transform: scale(1.1);
+  };
   &:hover ${AlbumThumbnailText} {
+    filter: brightness(100%);
     visibility: visible;
     opacity: 1;
-    }
   }
 `;
 
@@ -64,6 +65,8 @@ const PaddedHeading = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 `;
 
 const generalStyles = {
