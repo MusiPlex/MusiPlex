@@ -1,13 +1,18 @@
 import React from 'react';
-import AlbumView from './components/AlbumView.jsx';
+import AlbumsView from './components/AlbumsView.jsx';
 import globalStyles from './styles/GlobalStyles.js';
 
-const App = () => {
-  return (
-    <globalStyles.body>
-      <AlbumView />
-    </globalStyles.body>
-  );
-};
+class App extends React.Component {
+  constructor (props) {
+    super(props);
+  }
+  render () {
+    return (
+      <globalStyles.body>
+        <AlbumsView />
+      </globalStyles.body>
+    );
+  }
+}
 
 export default App;
