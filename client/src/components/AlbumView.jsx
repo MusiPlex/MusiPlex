@@ -21,7 +21,14 @@ class AlbumView extends React.Component {
         {this.state.albumData.map((album) => {
           return (
             <generalStyles.AlbumView>
-              <img src={`/thumbnails?url=${album.thumb}`} width="180" height="180"></img>
+              <generalStyles.AlbumThumbnailHolder>
+                <generalStyles.AlbumThumbnail>
+                  <img src={`/thumbnails?url=${album.thumb}`} width="180" height="180"></img>
+                  <generalStyles.AlbumThumbnailText>
+                    <img src="/static/play-icon.png" width="100" height="100"></img>
+                  </generalStyles.AlbumThumbnailText>
+                </generalStyles.AlbumThumbnail>
+              </generalStyles.AlbumThumbnailHolder>
               <generalStyles.AlbumTitle>
                 {album.title}
               </generalStyles.AlbumTitle>
