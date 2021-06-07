@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.get('/albums', plexControllers.getAlbums);
-
+app.get('/album', plexControllers.getAlbum);
 app.get('/thumbnails', plexControllers.getThumbnails);
 
 app.listen(port, () => {
