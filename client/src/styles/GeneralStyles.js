@@ -26,6 +26,7 @@ const AlbumThumbnailHolder = styled.div`
   width: 180px;
   overflow: hidden;
   border-radius: 10px;
+  box-shadow: 10px 10px 25px #ccc;
   `;
 
 const AlbumThumbnailText = styled.div`
