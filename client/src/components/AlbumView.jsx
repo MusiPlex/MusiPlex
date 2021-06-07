@@ -22,6 +22,7 @@ class AlbumView extends React.Component {
           return (
             <div>
               {album.title}
+              <img src={`/thumbnails?url=${album.thumb}`}></img>
             </div>
           );
         })}
