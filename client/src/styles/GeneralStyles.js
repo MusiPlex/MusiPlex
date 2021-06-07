@@ -19,6 +19,8 @@ const AlbumTitle = styled.h1`
   font-size: 0.8em;
   text-align: center;
   text-overflow: ellipsis;
+  color: grey;
+  font-weight: 300;
 `;
 
 const AlbumThumbnailHolder = styled.div`
@@ -30,6 +32,7 @@ const AlbumThumbnailHolder = styled.div`
   `;
 
 const AlbumThumbnailText = styled.div`
+transition: transform 2s, filter 1.5s ease-in-out;
     position: absolute;
     top: 22%;
     bottom: 0;
@@ -42,7 +45,7 @@ const AlbumThumbnailText = styled.div`
   `;
 
 const AlbumThumbnail = styled.div`
-  transition: transform 2s, filter 1.5s ease-in-out;
+  transition: transform 1s, filter 0.75s ease-in-out;
   transform-origin: center center;
   filter: brightness(100%);
   &:hover {
