@@ -58,6 +58,13 @@ const AlbumThumbnail = styled.div`
   }
 `;
 
+const PaddedHeading = styled.div`
+  padding-left: 2%;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
 
 const generalStyles = {
   SixColumnLayout,
@@ -65,7 +72,8 @@ const generalStyles = {
   AlbumTitle,
   AlbumThumbnailHolder,
   AlbumThumbnail,
-  AlbumThumbnailText
+  AlbumThumbnailText,
+  PaddedHeading
 };
 
 export default generalStyles;

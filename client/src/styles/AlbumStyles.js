@@ -17,9 +17,18 @@ const Background = styled.div`
   left: 0px;
 `;
 
-const generalStyles = {
+const SongsListing = styled.div`
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
+
+const albumStyles = {
   Container,
-  Background
+  Background,
+  SongsListing
 };
 
-export default generalStyles;
+export default albumStyles;
