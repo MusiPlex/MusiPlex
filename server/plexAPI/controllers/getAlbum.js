@@ -5,7 +5,7 @@ const path = require('path');
 
 const getAlbum = (req, res) => {
   const url = `${plexConfig.baseURL}:${plexConfig.port}/library/metadata/${req.query.id}/children`;
-  let outPath = path.join(__dirname, '..', '..', '..', 'assets', 'songs')
+  let outPath = path.join(__dirname, '..', '..', '..', 'assets', 'songs');
   const params = {
     'excludeAllLeaves': 1,
     'X-Plex-Token': plexConfig.plexToken,
