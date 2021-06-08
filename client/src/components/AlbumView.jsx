@@ -51,8 +51,12 @@ class AlbumView extends React.Component {
                       {song.index}
                     </albumStyles.SongIndex>
                     <albumStyles.SongInformation>
-                      <div>{song.title}</div>
-                      <div>{song.originalTitle}</div>
+                      <albumStyles.SongTitle>
+                        {song.title}
+                      </albumStyles.SongTitle>
+                      <albumStyles.SongArtist>
+                        {song.originalTitle}
+                      </albumStyles.SongArtist>
                     </albumStyles.SongInformation>
                     <albumStyles.SongDuration>
                       {moment(song.duration).format('m:ss')}

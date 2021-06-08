@@ -38,12 +38,22 @@ const SongListing = styled.div`
   margin-bottom: 2%;
   transition: transform 1s, filter 0.75s ease-in-out;
   transform-origin: center center;
-  filter: brightness(40%);
+  filter: brightness(100%);
   &:hover {
     filter: brightness(100%);
     transform: scale(1.1);
     cursor: pointer;
   };
+`;
+
+const SongTitle = styled.div`
+  font-size: 1.2em;
+  color: black;
+`;
+
+const SongArtist = styled.div`
+  font-size: 0.9em;
+  color: #2C2C2C;
 `;
 
 const SongIndex = styled.div`
@@ -73,6 +83,8 @@ const albumStyles = {
   AlbumTitle,
   SongsListing,
   SongListing,
+  SongTitle,
+  SongArtist,
   SongIndex,
   SongInformation,
   SongDuration,
