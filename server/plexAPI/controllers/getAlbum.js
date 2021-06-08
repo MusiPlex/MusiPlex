@@ -14,7 +14,7 @@ const getAlbum = (req, res) => {
     .then ((response) => {
       let albumData = response.data;
       for (let i = 0; i < albumData.MediaContainer.Metadata.length; i++) {
-        if (fs.existsSync(path.join(outPath, albumData.MediaContainer.Metadata[i].ratingKey))) {
+        if (fs.existsSync(path.join(outPath, albumData.MediaContainer.Metadata[i].Media[0].id.toString()))) {
           albumData.MediaContainer.Metadata[i].downloaded = true;
         } else {
           albumData.MediaContainer.Metadata[i].downloaded = false;
