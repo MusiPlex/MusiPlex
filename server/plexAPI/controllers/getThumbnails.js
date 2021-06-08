@@ -6,7 +6,7 @@ const placeholder = path.join(__dirname, '..', '..', '..', 'static', 'placeholde
 
 const getThumbnails = async (req, res) => {
   let outName = `${req.query.url.split('/').slice(-1)}.jpg`
-  let outPath = path.join(__dirname, '..', '..', '..', 'assets', outName)
+  let outPath = path.join(__dirname, '..', '..', '..', 'assets', 'thumbnails', outName)
   if (fs.existsSync(outPath)) {
     res.sendFile(outPath);
   } else {
