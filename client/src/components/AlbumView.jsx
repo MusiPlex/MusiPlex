@@ -19,6 +19,10 @@ class AlbumView extends React.Component {
       .then(data => this.setState({albumData: data.MediaContainer, loading: false}));
   }
 
+  handleDownload(song) {
+    console.log(song.title);
+  }
+
   render () {
     return (
       <div>
@@ -53,6 +57,12 @@ class AlbumView extends React.Component {
                     <albumStyles.SongDuration>
                       {moment(song.duration).format('m:ss')}
                     </albumStyles.SongDuration>
+                    <albumStyles.SongDownloadable onClick={() => this.handleDownload(song)}>
+                      {song.downloaded ?
+                        <div>Downloaded</div> :
+                        <div>Cloud</div>
+                      }
+                    </albumStyles.SongDownloadable>
                   </albumStyles.SongListing>
                 );
               })}

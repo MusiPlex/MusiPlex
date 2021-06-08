@@ -63,6 +63,9 @@ const SongDuration = styled.div`
   width: 5%;
 `;
 
+const SongDownloadable = styled.div`
+  width: 5%;
+`;
 
 const albumStyles = {
   Container,
@@ -72,7 +75,8 @@ const albumStyles = {
   SongListing,
   SongIndex,
   SongInformation,
-  SongDuration
+  SongDuration,
+  SongDownloadable
 };
 
 export default albumStyles;
