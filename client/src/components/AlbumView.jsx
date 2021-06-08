@@ -20,7 +20,15 @@ class AlbumView extends React.Component {
   }
 
   handleDownload(song) {
-    console.log(song.title);
+    fetch('/download', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(song)
+    })
+      .then(console.log('Yay'))
+      .catch(console.log('Nay'));
   }
 
   render () {
