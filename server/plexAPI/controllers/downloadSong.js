@@ -8,7 +8,7 @@ const downloadSong = async (req, res) => {
   let outPath = path.join(__dirname, '..', '..', '..', 'assets', 'songs', outName)
   if (fs.existsSync(outPath)) {
     res.status(200)
-    res.send('Downloaded')
+    res.send({status: 'Downloaded'})
   } else {
     const url = `${plexConfig.baseURL}:${plexConfig.port}${req.body.Media[0].Part[0].key}`;
     const params = {
@@ -24,11 +24,11 @@ const downloadSong = async (req, res) => {
       const w = response.data.pipe(fs.createWriteStream(outPath));
       w.on('finish', () => {
         res.status(200)
-        res.send('Downloaded')
+        res.send({status: 'Downloaded'})
       });
     } catch (err) {
       res.status(404);
-      res.send('Error')
+      res.send({status: 'Error'})
       console.log(err)
     }
   }
