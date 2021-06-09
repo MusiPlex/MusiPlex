@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import { AiOutlineCloudDownload } from 'react-icons/ai';
+import { BiCheckDouble } from 'react-icons/bi';
 
 import albumStyles from '../styles/AlbumStyles.js';
 import generalStyles from '../styles/GeneralStyles.js';
@@ -74,7 +75,7 @@ class AlbumView extends React.Component {
                     </albumStyles.SongDuration>
                     <albumStyles.SongDownloadable onClick={() => this.handleDownload(song, i)}>
                       {song.downloaded ?
-                        <i class="fas fa-check"></i> :
+                        <BiCheckDouble /> :
                         <AiOutlineCloudDownload />
                       }
                     </albumStyles.SongDownloadable>
