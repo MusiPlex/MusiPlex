@@ -19,7 +19,8 @@ class AlbumView extends React.Component {
       .then(data => this.setState({albumData: data.MediaContainer, loading: false}));
   }
 
-  handleDownload(song) {
+  handleDownload(song, i) {
+    console.log(i);
     fetch('/download', {
       method: 'POST',
       headers: {
@@ -52,7 +53,7 @@ class AlbumView extends React.Component {
               </albumStyles.AlbumTitle>
             </generalStyles.PaddedHeading>
             <albumStyles.SongsListing>
-              {this.state.albumData.Metadata.map((song) => {
+              {this.state.albumData.Metadata.map((song, i) => {
                 return (
                   <albumStyles.SongListing>
                     <albumStyles.SongIndex>
@@ -69,10 +70,10 @@ class AlbumView extends React.Component {
                     <albumStyles.SongDuration>
                       {moment(song.duration).format('m:ss')}
                     </albumStyles.SongDuration>
-                    <albumStyles.SongDownloadable onClick={() => this.handleDownload(song)}>
+                    <albumStyles.SongDownloadable onClick={() => this.handleDownload(song, i)}>
                       {song.downloaded ?
-                        <div>Downloaded</div> :
-                        <div>Cloud</div>
+                        <i class="fas fa-check"></i> :
+                        <i class="fas fa-cloud-download-alt"></i>
                       }
                     </albumStyles.SongDownloadable>
                   </albumStyles.SongListing>
